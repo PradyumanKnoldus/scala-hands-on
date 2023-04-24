@@ -9,14 +9,13 @@ object Employee {
 
     def unapply(employee: Employee): Option[(Int, String)] = Some((employee.id, employee.name))
 
-    def equals(employee: Employee): Boolean = employee match {
-      case anotherEmployee: Employee
-        if employee.id == anotherEmployee.id && employee.name == anotherEmployee.name => true
+    override def equals(other: Any): Boolean = other match {
+      case employee: Employee => employee == other
       case _ => false
     }
+
      def toString(employee: Employee): String = s"Employee(${employee.id}, ${employee.name})"
   }
-
 
 object ClassAsCaseClass extends App {
 
