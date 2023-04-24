@@ -9,7 +9,7 @@ object RecursiveFunction extends App {
   def factorial(number: Int): BigInt = {
     @tailrec
     def factorialHelper(number: Int, accumulator: BigInt = 1): BigInt = {
-      if (number == 1) accumulator
+      if (number <= 1) accumulator
       else factorialHelper(number - 1 , number * accumulator)
     }
     factorialHelper(number)
