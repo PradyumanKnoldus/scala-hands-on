@@ -14,6 +14,7 @@ object Employee {
         if employee.id == anotherEmployee.id && employee.name == anotherEmployee.name => true
       case _ => false
     }
+     def toString(employee: Employee): String = s"Employee(${employee.id}, ${employee.name})"
   }
 
 
@@ -31,11 +32,15 @@ object ClassAsCaseClass extends App {
 
   val useOfEquals = employeeTwo.equals(employeeOne)
 
+  val useOfToString = Employee.toString(employeeOne)
+
   //---------------------------------------------------------------------------------------------------------------------------
 
   println(extractor(employeeOne))
   println(extractor(employeeTwo))
 
   println(useOfEquals)
+
+  println(useOfToString)
 
 }
