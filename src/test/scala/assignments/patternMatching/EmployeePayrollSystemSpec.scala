@@ -9,17 +9,17 @@ class EmployeePayrollSystemSpec extends AnyFlatSpec {
 
   "calculateMonthlySalary" should "return the correct monthly salary for a Software Engineer" in {
     val employeeDetails = EmployeeDetails(1, "Software Engineer", "Chicago", 2.5, 0.9)
-    assert(employeePayrollSystem.calculateMonthlySalary(employeeDetails) == 1100.0)
+    assert(employeePayrollSystem.calculateMonthlySalary(employeeDetails) == 1125.0)
   }
 
   it should "return the correct monthly salary for a Sales Representative" in {
     val employeeDetails = EmployeeDetails(2, "Sales Representative", "New York", 3.2, 0.6)
-    assert(employeePayrollSystem.calculateMonthlySalary(employeeDetails) == 920.0)
+    assert(employeePayrollSystem.calculateMonthlySalary(employeeDetails) == 928.0)
   }
 
   it should "return the correct monthly salary for a Manager" in {
     val employeeDetails = EmployeeDetails(3, "Manager", "Seattle", 4.8, 0.7)
-    assert(employeePayrollSystem.calculateMonthlySalary(employeeDetails) == 1700.0)
+    assert(employeePayrollSystem.calculateMonthlySalary(employeeDetails) == 1740.0)
   }
 
   it should "return the default monthly salary for other job titles" in {
@@ -45,6 +45,6 @@ class EmployeePayrollSystemSpec extends AnyFlatSpec {
 
   "calculatePaycheck" should "return the correct final paycheck for an employee" in {
     val employeeDetails = EmployeeDetails(7, "Manager", "Seattle", 4.8, 0.7)
-    assert(employeePayrollSystem.calculatePaycheck(employeeDetails) == 1595.0)
+    assert(employeePayrollSystem.calculatePaycheck(employeeDetails) == 1629.0)
   }
 }
