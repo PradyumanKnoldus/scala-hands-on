@@ -14,15 +14,15 @@ class EmployeePayrollSystem {
   def calculateMonthlySalary(employeeDetails: EmployeeDetails): Double = {
     val monthlySalary = employeeDetails match {
       case employee if employee.jobTitle == "Software Engineer" =>
-        1000.0 + 50.0 * employee.yearsOfExperience.toInt
+        1000.0 + 50.0 * employee.yearsOfExperience
       case employee if employee.jobTitle == "Sales Representative" =>
         val baseSalary = 800.0
         val bonus = if (employee.performance >= 0.5) 40.0 else 20.0
-        baseSalary + bonus * employee.yearsOfExperience.toInt
+        baseSalary + bonus * employee.yearsOfExperience
       case employee if employee.jobTitle == "Manager" =>
         val baseSalary = 1500.0
         val bonus = if (employee.performance >= 0.8) 75.0 else 50.0
-        baseSalary + bonus * employee.yearsOfExperience.toInt
+        baseSalary + bonus * employee.yearsOfExperience
       case _ => 600.0
     }
     logger.info(s"\nCalculated monthly salary of $monthlySalary for employee with details $employeeDetails")
@@ -45,7 +45,7 @@ class EmployeePayrollSystem {
   def calculateTaxes(monthlySalary: Double): Double = {
     val taxDeduction = monthlySalary match {
       case salary if salary < 600 => 0
-      case salary if salary >= 600 && salary < 1000 => 0.10 * salary
+      case salary if salary >= 600 && salary <= 1000 => 0.10 * salary
       case salary => 0.15 * salary
     }
     logger.info(s"\nCalculated tax deduction of $taxDeduction for employee with monthly salary $monthlySalary")
