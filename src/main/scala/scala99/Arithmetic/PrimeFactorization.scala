@@ -3,9 +3,9 @@ package scala99.Arithmetic
 
 import scala.annotation.tailrec
 
-object PrimeFactors extends App {
+object PrimeFactorization extends App {
 
-  implicit class IntWithPrimeFactors(number: Int) {
+  implicit class PrimeFactors(number: Int) {
     def primeFactors: List[Int] = {
       @tailrec
       def primeFactorsHelper(number: Int, factor: Int, factors: List[Int]): List[Int] = {
